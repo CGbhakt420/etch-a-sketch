@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <div id="sketcharea" class="container"></div>
+    <div class="maincontainer">
+        <div class="title">
+            <h1>SketchPad</h1>
+        </div>
+        <div class="mode">Mode: Coloring</div>
+        <div class="content">
+            <div id="sketcharea" class="container"></div>
+
+            <div class="buttons">
+                <input type="color" id="colorPicker" value="#000000"> <!-- Color picker input -->
+                
+                <button class="erasorButton" onclick="changeColor('white')">
+                    Erasor
+                </button>
+                
+                <button onclick="resetBoard()">Reset</button>
+            </div>
+            <div>
+                <input type="text" placeholder="Size of Board" value="16" onchange="changeSize(this.value)" />
+                <button>Set Size</button>
+            </div>
+            <div class="error">Input must be between 2 and 100</div>
+        </div>
+    </div>
+
+
+
     <script src="script.js"></script>
-    
+
 </body>
+
 </html>
