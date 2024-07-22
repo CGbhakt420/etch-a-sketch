@@ -25,20 +25,41 @@ document.getElementById('colorPicker').addEventListener('input', function() {
 function colorSquare() {
     if (click) {
         this.style.backgroundColor = color;
+    } else {
+        // Erase the color when eraser mode is enabled
+        this.style.backgroundColor = "#ffffff"; // White color for eraser
     }
 }
+
+function toggleMode() {
+    click = !click; // Toggle the value of click (true/false)
+}
+
+function trueClick() {
+    click = true;
+}
+document.querySelector('.erasorButton').addEventListener('click', function() {
+    toggleMode();
+});
+
+document.querySelector('.drawButton').addEventListener('click', function(){
+    trueClick();
+});
 
 
 function changeSize(input) {
     if (input >= 2 && input <= 100) {
       document.querySelector(".error").style.display = "none";
-      createcells(input);
+      createCells(input);
     } else {
       document.querySelector(".error").style.display = "flex";
     }
   }
 
-function createcells(size){
+function createCells(size){
+
+    sketchArea.innerHTML = ''; // Clear existing cells
+
     let amount = size*size;
     for(let i=0; i<amount; i++){
         const gridCell = document.createElement("div");
@@ -52,4 +73,13 @@ function createcells(size){
     }
 }
 
-createcells(16);
+function resetBoard() {
+    createCells(size);
+}
+
+createCells(16);
+
+// // Event listener for the reset button
+// document.querySelector('.resetButton').addEventListener('click', function() {
+//     createCells(size);
+// });
