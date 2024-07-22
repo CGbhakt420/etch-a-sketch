@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    padding: 0;
+    padding: 0; 
 }
 
 body{
@@ -10,7 +10,6 @@ body{
 #sketcharea{
     display: flex;
     flex-wrap: wrap;
-    margin: 100px auto;
     background-color: white;
 
 }
@@ -20,21 +19,66 @@ body{
 }
 
 .maincontainer {
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh; /* Ensure maincontainer takes at least the full height of viewport */
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    padding: 20px; /* Add padding for spacing around content */
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: blueviolet;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 300px;
-    min-height: 300px;
-    width: 60vw;
-    height: 60vw;
-    max-width: 600px;
-    max-height: 600px;
-  }
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+
+input[type="text"] {
+    width: 50px;
+    padding: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#colorPicker {
+    width: 100px;
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+
+.buttons {
+    margin-top: 8px; /* Add margin to create space between buttons and other content */
+    display: flex;
+    gap: 12px;
+}
+
+button{
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: paleturquoise;
+    font-family: Arial, Helvetica, sans-serif;
+    color: purple;
+    font-weight: 700;
+
+}
+
+.lower{
+    margin-bottom: 12px;
+}
+
+.error{
+    margin-top: 5px;
+    color: brown;
+}

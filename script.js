@@ -11,7 +11,7 @@ sketchArea.style.height = `${GRIDSIZE}px`;
 // }
 
 let color = "#000000"; 
-let click = true;
+let click = false;
 
 function changeColor() {
     color = document.getElementById('colorPicker').value;

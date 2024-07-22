@@ -11,14 +11,17 @@
 <body>
     <div class="maincontainer">
         <div class="title">
-            <h1>SketchPad</h1>
+            <h1><u>SketchPad</u></h1>
         </div>
         
         <div class="content">
             <div id="sketcharea" class="container"></div>
 
+            <input type="color" id="colorPicker" value="#000000"> <!-- Color picker input -->
+
+            
+
             <div class="buttons">
-                <input type="color" id="colorPicker" value="#000000"> <!-- Color picker input -->
 
                 <button class="drawButton">Draw</button>
                 
@@ -26,9 +29,9 @@
                     Erasor
                 </button>
                 
-                <button onclick="resetBoard()">Reset</button>
+                <button class="resetButton" onclick="resetBoard()">Reset</button>
             </div>
-            <div>
+            <div class="lower">
                 <input type="text" placeholder="Size of Board" value="16" onchange="changeSize(this.value)" />
                 <button>Set Size</button>
             </div>
